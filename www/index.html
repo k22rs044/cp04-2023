@@ -166,7 +166,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
-        $('#btnD').prop('disabled',false);
+        $('#btnD').prop('disabled', false);
 
     }
 
@@ -205,6 +205,16 @@
         period = 60*parseInt($("#minute").val())+parseInt($("#second").val());
         $("#time").html("経過時間：０");
         $("#remain").html("残り時間："+ period);
+        
+    }
+
+    function btnDClick(e){
+        var img2 = new Image();
+        var ctx = Dcanvas.getContext("2d");
+        img2.src = "azarasi.gif";
+        img2.onload = function(){
+          ctx.drawImage(img2,0,0,350,350);
+        };
         
     }
     
@@ -246,6 +256,8 @@
 <body>
     <canvas id="mycanvas" width="200" height="200">Test</canvas>
 
+    <canvas id="Dcanvas" width="500" height="500">Test</canvas>
+
     <div id="minuteStr"> </div>
     <div id="secondStr"> </div>
 
@@ -254,7 +266,7 @@
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button> 
-     <button id="btnD">Set</button>  
+    <button id="btnD">HEY!!</button>  
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=15 >
 </body>
